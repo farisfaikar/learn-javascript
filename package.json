@@ -1,0 +1,19 @@
+{
+  "name": "learn-javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/R0merol/learn-javascript.git"
+  },
+  "author": "R0merol",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/R0merol/learn-javascript/issues"
+  },
+  "homepage": "https://github.com/R0merol/learn-javascript#readme"
+}

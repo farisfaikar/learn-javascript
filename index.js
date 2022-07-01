@@ -141,7 +141,38 @@ function kuis8() {
 }
 
 function kuis9() {
-
+  const books = [
+    { title: 'The Da Vinci Code', author: 'Dan Brown', sales: 5094805 },
+    { title: 'The Ghost', author: 'Robert Harris', sales: 807311 },
+    { title: 'White Teeth', author: 'Zadie Smith', sales: 815586 },
+    { title: 'Fifty Shades of Grey', author: 'E. L. James', sales: 3758936 },
+    { title: 'Jamie\'s Italy', author: 'Jamie Oliver', sales: 906968 },
+    { title: 'I Can Make You Thin', author: 'Paul McKenna', sales: 905086 },
+    { title: 'Harry Potter and the Deathly Hallows', author: 'J.K Rowling', sales: 4475152 },
+  ];
+  let filterBySales = books.filter((books) => books.sales > 1000000)
+  let greatAuthors = filterBySales.map((book) => {return `${book.author} adalah penulis buku ${book.title} yang sangat hebat!`})
 }
 
-kuis9();
+const Tiger = require('./Tiger');
+const Wolf = require('./Wolf');
+function kuis10() {
+  const fight = (tiger, wolf) => {
+    if (tiger.strength > wolf.strength) {
+      return tiger.growl();
+    }
+    if (wolf.strength > tiger.strength) {
+      return wolf.howl();
+    }
+    return 'Harimau dan serigala sama-sama kuat!';
+  };
+  
+  const myTiger = new Tiger();
+  const myWolf = new Wolf();
+  
+  const result = fight(myTiger, myWolf);
+  
+  module.exports = {fight, myTiger, myWolf, result};
+}
+
+kuis10();
