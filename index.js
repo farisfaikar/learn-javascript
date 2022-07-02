@@ -151,7 +151,7 @@ function kuis9() {
     { title: 'Harry Potter and the Deathly Hallows', author: 'J.K Rowling', sales: 4475152 },
   ];
   let filterBySales = books.filter((books) => books.sales > 1000000)
-  let greatAuthors = filterBySales.map((book) => {return `${book.author} adalah penulis buku ${book.title} yang sangat hebat!`})
+  let greatAuthors = filterBySales.map((book) => { return `${book.author} adalah penulis buku ${book.title} yang sangat hebat!` })
 }
 
 const Tiger = require('./Tiger');
@@ -166,13 +166,52 @@ function kuis10() {
     }
     return 'Harimau dan serigala sama-sama kuat!';
   };
-  
+
   const myTiger = new Tiger();
   const myWolf = new Wolf();
-  
+
   const result = fight(myTiger, myWolf);
-  
-  module.exports = {fight, myTiger, myWolf, result};
+
+  module.exports = { fight, myTiger, myWolf, result };
 }
 
-kuis10();
+function kuis11() {
+  // TODO 1
+  class ValidationError extends Error {
+    constructor(message) {
+      super(message);
+      this.name = "ValidationError";
+    }
+  }
+  // TODO 2
+  function validateNumberInput(arg1, arg2, arg3) {
+    if (typeof(arg1) !== 'number') {
+      throw new ValidationError('Argumen pertama harus number');
+    } else if (typeof(arg2) !== 'number') {
+      throw new ValidationError('Argumen kedua harus number');
+    } else if (typeof(arg3) !== 'number') {
+      throw new ValidationError('Argumen ketiga harus number');
+    }
+  }
+
+  const detectTriangle = (a, b, c) => {
+    // TODO 3
+    try {
+      validateNumberInput(a, b, c);
+    } catch (error) {
+      return error.message;
+    }
+
+    if (a === b && b === c) {
+      return 'Segitiga sama sisi';
+    }
+
+    if (a === b || a === c || b === c) {
+      return 'Segitiga sama kaki';
+    }
+
+    return 'Segitiga sembarang';
+  };
+}
+
+kuis11();
