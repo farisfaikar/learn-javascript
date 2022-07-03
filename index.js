@@ -185,11 +185,11 @@ function kuis11() {
   }
   // TODO 2
   function validateNumberInput(arg1, arg2, arg3) {
-    if (typeof(arg1) !== 'number') {
+    if (typeof (arg1) !== 'number') {
       throw new ValidationError('Argumen pertama harus number');
-    } else if (typeof(arg2) !== 'number') {
+    } else if (typeof (arg2) !== 'number') {
       throw new ValidationError('Argumen kedua harus number');
-    } else if (typeof(arg3) !== 'number') {
+    } else if (typeof (arg3) !== 'number') {
       throw new ValidationError('Argumen ketiga harus number');
     }
   }
@@ -214,4 +214,23 @@ function kuis11() {
   };
 }
 
-kuis11();
+function kuis12() {
+  try {
+    const arr = [1, 2, 3, 4];
+    for (let i = 0; i <= 4; i++) {
+      console.log(arr[i]);
+    }
+  } catch (e) {
+    console.log("Out of bounds");
+  }
+}
+
+function kuis13() {
+
+}
+
+function learnAsync() {
+  
+}
+
+kuis13();
