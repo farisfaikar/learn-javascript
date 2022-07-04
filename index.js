@@ -15,15 +15,15 @@ function kuis1(score) {
 
   // TODO
   if (score >= 90) {
-    result = 'Selamat! Anda mendapatkan nilai A.';
+    result = "Selamat! Anda mendapatkan nilai A.";
   } else if (score >= 80 && score <= 89) {
-    result = 'Anda mendapatkan nilai B.';
+    result = "Anda mendapatkan nilai B.";
   } else if (score >= 70 && score <= 79) {
-    result = 'Anda mendapatkan nilai C.';
+    result = "Anda mendapatkan nilai C.";
   } else if (score >= 60 && score <= 69) {
-    result = 'Anda mendapatkan nilai D.';
+    result = "Anda mendapatkan nilai D.";
   } else if (score < 60) {
-    result = 'Anda mendapatkan nilai E.';
+    result = "Anda mendapatkan nilai E.";
   }
   // Jangan hapus kode ini
   return result;
@@ -57,7 +57,7 @@ function kuis4() {
     ["USD", 14000],
     ["JPY", 131],
     ["SGD", 11000],
-    ["MYR", 3500]
+    ["MYR", 3500],
   ]);
   let priceInIDR = priceInJPY * currency.get("JPY");
   console.log(priceInIDR);
@@ -65,11 +65,11 @@ function kuis4() {
 
 function kuis5() {
   const artistsAndSongs = {
-    "Keyakizaka46": ["Silent Majority"],
-    "Blackpink": ["How You Like That", "Ice Cream"],
-    "JKT48": ["Rapsodi", "Heavy Rotation"],
-    "Twice": ["What is Love?"],
-  }
+    Keyakizaka46: ["Silent Majority"],
+    Blackpink: ["How You Like That", "Ice Cream"],
+    JKT48: ["Rapsodi", "Heavy Rotation"],
+    Twice: ["What is Love?"],
+  };
 
   artistsAndSongs["Babymetal"] = ["Gimme chocolate"];
 
@@ -142,20 +142,26 @@ function kuis8() {
 
 function kuis9() {
   const books = [
-    { title: 'The Da Vinci Code', author: 'Dan Brown', sales: 5094805 },
-    { title: 'The Ghost', author: 'Robert Harris', sales: 807311 },
-    { title: 'White Teeth', author: 'Zadie Smith', sales: 815586 },
-    { title: 'Fifty Shades of Grey', author: 'E. L. James', sales: 3758936 },
-    { title: 'Jamie\'s Italy', author: 'Jamie Oliver', sales: 906968 },
-    { title: 'I Can Make You Thin', author: 'Paul McKenna', sales: 905086 },
-    { title: 'Harry Potter and the Deathly Hallows', author: 'J.K Rowling', sales: 4475152 },
+    { title: "The Da Vinci Code", author: "Dan Brown", sales: 5094805 },
+    { title: "The Ghost", author: "Robert Harris", sales: 807311 },
+    { title: "White Teeth", author: "Zadie Smith", sales: 815586 },
+    { title: "Fifty Shades of Grey", author: "E. L. James", sales: 3758936 },
+    { title: "Jamie's Italy", author: "Jamie Oliver", sales: 906968 },
+    { title: "I Can Make You Thin", author: "Paul McKenna", sales: 905086 },
+    {
+      title: "Harry Potter and the Deathly Hallows",
+      author: "J.K Rowling",
+      sales: 4475152,
+    },
   ];
-  let filterBySales = books.filter((books) => books.sales > 1000000)
-  let greatAuthors = filterBySales.map((book) => { return `${book.author} adalah penulis buku ${book.title} yang sangat hebat!` })
+  let filterBySales = books.filter((books) => books.sales > 1000000);
+  let greatAuthors = filterBySales.map((book) => {
+    return `${book.author} adalah penulis buku ${book.title} yang sangat hebat!`;
+  });
 }
 
-const Tiger = require('./Tiger');
-const Wolf = require('./Wolf');
+const Tiger = require("./Tiger");
+const Wolf = require("./Wolf");
 function kuis10() {
   const fight = (tiger, wolf) => {
     if (tiger.strength > wolf.strength) {
@@ -164,7 +170,7 @@ function kuis10() {
     if (wolf.strength > tiger.strength) {
       return wolf.howl();
     }
-    return 'Harimau dan serigala sama-sama kuat!';
+    return "Harimau dan serigala sama-sama kuat!";
   };
 
   const myTiger = new Tiger();
@@ -185,12 +191,12 @@ function kuis11() {
   }
   // TODO 2
   function validateNumberInput(arg1, arg2, arg3) {
-    if (typeof (arg1) !== 'number') {
-      throw new ValidationError('Argumen pertama harus number');
-    } else if (typeof (arg2) !== 'number') {
-      throw new ValidationError('Argumen kedua harus number');
-    } else if (typeof (arg3) !== 'number') {
-      throw new ValidationError('Argumen ketiga harus number');
+    if (typeof arg1 !== "number") {
+      throw new ValidationError("Argumen pertama harus number");
+    } else if (typeof arg2 !== "number") {
+      throw new ValidationError("Argumen kedua harus number");
+    } else if (typeof arg3 !== "number") {
+      throw new ValidationError("Argumen ketiga harus number");
     }
   }
 
@@ -203,14 +209,14 @@ function kuis11() {
     }
 
     if (a === b && b === c) {
-      return 'Segitiga sama sisi';
+      return "Segitiga sama sisi";
     }
 
     if (a === b || a === c || b === c) {
-      return 'Segitiga sama kaki';
+      return "Segitiga sama kaki";
     }
 
-    return 'Segitiga sembarang';
+    return "Segitiga sembarang";
   };
 }
 
@@ -225,9 +231,7 @@ function kuis12() {
   }
 }
 
-function kuis13() {
-  
-}
+function kuis13() {}
 
 function learnAsync() {
   setTimeout(() => {
@@ -236,17 +240,17 @@ function learnAsync() {
   }, 3000);
   console.log("This goes first apparently, we wait 3 seconds");
 
-  const orderMeth = callback => {
+  const orderMeth = (callback) => {
     let meth = null;
     console.log("Jesse, I'm making crystal meth here. Fucking wait will ya?");
     setTimeout(() => {
       meth = "The meth is cooked!";
       callback(meth);
     }, 3000);
-    return meth; 
-  }
+    return meth;
+  };
 
-  orderMeth(meth => {
+  orderMeth((meth) => {
     console.log(meth);
   });
 }
@@ -260,21 +264,118 @@ function makeFentanyl() {
     console.log(fentanyl);
   }
   function asynchronousWay(...rawIngredients) {
-    collectIngredients(rawIngredients, function(ingredients) {
-      makeTheSpaceDrugs(ingredients, function(spaceDrugs) {
-
-      })
-    })
+    collectIngredients(rawIngredients, function (ingredients) {
+      makeTheSpaceDrugs(ingredients, function (spaceDrugs) {});
+    });
   }
   synchronousWay(["Lithium", "Mercury", "Sugar"]);
 }
 
 function makeACake(...rawIngredients) {
   collectIngredients(rawIngredients)
-      .then(makeTheDough)
-      .then(pourDough)
-      .then(bakeACake)
-      .then(console.log);
+    .then(makeTheDough)
+    .then(pourDough)
+    .then(bakeACake)
+    .then(console.log);
 }
 
+function callbackFunction() {
+  const database = {
+    user1: {
+      email: "romeorulant@gmail.com",
+      password: "password",
+    },
+    user2: {
+      email: "nathanneuman@gmail.com",
+      password: "12345",
+    },
+  };
+
+  function loginUser(email, password, callback) {
+    setTimeout(() => {
+      console.log("Data fetching complete!");
+      callback({ userEmail: email, userPassword: password });
+    }, 3000);
+  }
+
+  function getUserPictures(email, callback) {
+    setTimeout(() => {
+      console.log(`${email} Picture fetching complete!`);
+      callback(["pic1", "pic2", "pic3"]);
+    }, 1000);
+  }
+
+  function getUserBlackmails(email, picture, callback) {
+    setTimeout(() => {
+      console.log(
+        `${email} Blackmail fetching complete! Prepare to get your life ruined!`
+      );
+      callback(`The user of ${email} is scared of ${picture}`);
+    }, 2000);
+  }
+
+  // Callback hell method
+  const user = loginUser("nathanneuman@gmail.com", "12345", (user) => {
+    console.log(user);
+    getUserPictures(user.userEmail, (pictures) => {
+      console.log(pictures);
+      getUserBlackmails(user.userEmail, pictures[0], (blackmails) => {
+        console.log(blackmails);
+      });
+    });
+  });
+}
+
+function promise() {
+  const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("User data fetching successful!");
+      // resolve({ user: "Bambang" });
+      reject(new Error("What the hell is going on bro"));
+    }, 2000);
+  });
+
+  promise
+    .then((user) => {
+      console.log(user);
+    })
+    .catch((err) => console.log(err.message));
+}
+
+function promise2() {
+  function loginUser(email, password) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        console.log("Data fetching complete!");
+        resolve({ userEmail: email, userPassword: password });
+      }, 3000);
+    });
+  }
+
+  function getUserPictures(email) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        console.log(`${email} Picture fetching complete!`);
+        resolve(["pic1", "pic2", "pic3"]);
+      }, 1000);
+    });
+  }
+
+  function getUserBlackmails(email, picture) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        console.log(
+          `${email} Blackmail fetching complete! Prepare to get your life ruined!`
+        );
+        resolve(`The user of ${email} is scared of ${picture}`);
+      }, 2000);
+    });
+  }
+
+  loginUser("bambang@gmail.com", "bunga")
+    .then((user) => getUserPictures(user.email))
+    .then((pictures) => getUserBlackmail(pictures.email, pictures.picture));
+}
+
+promise2();
 // makeFentanyl();
