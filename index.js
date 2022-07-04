@@ -226,11 +226,55 @@ function kuis12() {
 }
 
 function kuis13() {
-
-}
-
-function learnAsync() {
   
 }
 
-kuis13();
+function learnAsync() {
+  setTimeout(() => {
+    console.log("What is going on bro");
+    return 69;
+  }, 3000);
+  console.log("This goes first apparently, we wait 3 seconds");
+
+  const orderMeth = callback => {
+    let meth = null;
+    console.log("Jesse, I'm making crystal meth here. Fucking wait will ya?");
+    setTimeout(() => {
+      meth = "The meth is cooked!";
+      callback(meth);
+    }, 3000);
+    return meth; 
+  }
+
+  orderMeth(meth => {
+    console.log(meth);
+  });
+}
+
+function makeFentanyl() {
+  function synchronousWay(...rawIngredients) {
+    const ingredients = collectIngredients(rawIngredients);
+    spaceDrugs = makeTheSpaceDrugs(ingredients);
+    pouredSpaceDrugs = pourSpaceDrugs(spaceDrugs);
+    fentanyl = heatSpaceDrugs(pourSpaceDrugs);
+    console.log(fentanyl);
+  }
+  function asynchronousWay(...rawIngredients) {
+    collectIngredients(rawIngredients, function(ingredients) {
+      makeTheSpaceDrugs(ingredients, function(spaceDrugs) {
+
+      })
+    })
+  }
+  synchronousWay(["Lithium", "Mercury", "Sugar"]);
+}
+
+function makeACake(...rawIngredients) {
+  collectIngredients(rawIngredients)
+      .then(makeTheDough)
+      .then(pourDough)
+      .then(bakeACake)
+      .then(console.log);
+}
+
+// makeFentanyl();
