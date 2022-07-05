@@ -377,5 +377,33 @@ function promise2() {
     .then((pictures) => getUserBlackmail(pictures.email, pictures.picture));
 }
 
-promise2();
+function promiseNeverland() {
+  function loginUser(email, password) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        console.log("User is now logged in!");
+        resolve({ email: email, password: password });
+      });
+    }, 3000);
+  }
+
+  function getMedicine(email, medicineName) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        console.log(`<${email}> has received ${medicineName}`);
+        resolve(`Medicine Item: ${medicineName}`);
+      }, 3000);
+    });
+  }
+
+  async function displayResult() {
+    const user = await loginUser("faris@gmail.com", "password");
+    const medicine = await getMedicine(user.email, "Oxandrolone");
+    console.log(medicine);
+  }
+
+  displayResult();
+}
+
+promiseNeverland();
 // makeFentanyl();
