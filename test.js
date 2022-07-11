@@ -25,3 +25,4 @@ console.log("testing");
 checkStock().then(handleSuccess, handleFailure);
 console.log("end of testing");
 console.log("another end of testing");
+console.log("and another one");
