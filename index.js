@@ -405,5 +405,16 @@ function promiseNeverland() {
   displayResult();
 }
 
+function destructuringAssignment() {
+  const bambang = { a: 1, b: 2 };
+  const { a } = bambang;
+  console.log(a);
+  const lah = bambang.a;
+  console.log(lah);
+  // Both of these expressions achieves the same goal... for some reason
+  // const { a } = bambang;
+  // const lah = bambang.a;
+}
+
 promiseNeverland();
 // makeFentanyl();
